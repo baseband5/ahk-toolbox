@@ -24,17 +24,10 @@ f9::
 f10::
 f11::
 f12::
-
+esc::
 
 ;Remap esc to capslock for good
-ESC::
-  If GetKeyState("CapsLock", "T") = 0 {
-      SetCapsLockState, AlwaysOn
- }
-  Else { 
-      SetCapsLockState, AlwaysOff
-  }
-return
+
 
 CapsLock::
 	KeyWait, CapsLock
@@ -45,16 +38,10 @@ Return
 
 #If, GetKeyState("CapsLock", "P") ;Your CapsLock hotkeys go below
 
-+k::send, {pgup}
+
 k::Up
-
-+h::send, {home}
 h::Left
-
 j::Down
-+j::send, {pgdn}
-
-+l::send, {end}
 l::Right ;u::Send {Home}
 
 u::send, ^z
@@ -71,6 +58,17 @@ p::send, ^v
 ]::send, ^{tab}
 +[::send, ^1
 +]::send ^9
+
+`::
+  If GetKeyState("CapsLock", "T") = 0 {
+      SetCapsLockState, AlwaysOn
+ }
+  Else { 
+      SetCapsLockState, AlwaysOff
+  }
+return
+
+
 
 1::f1
 2::f2
