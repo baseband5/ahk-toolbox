@@ -10,8 +10,21 @@
 
 */
 
+Kled(lv,cmd)
+{
+  Loop, 20 
+  {
+   KeyboardLED(lv,cmd, A_Index)
+   ;msgbox, %A_Index%
+   
+  }
+return
+}
+
+
 KeyboardLED(LEDvalue, Cmd, Kbd=0)
 {
+  ;msgbox, %Kbd%
   SetUnicodeStr(fn,"\Device\KeyBoardClass" Kbd)
   h_device:=NtCreateFile(fn,0+0x00000100+0x00000080+0x00100000,1,1,0x00000040+0x00000020,0)
   

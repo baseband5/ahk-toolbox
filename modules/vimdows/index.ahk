@@ -7,6 +7,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SetTitleMatchMode RegEx
 
+
+
 ;tkl to 60%
 ;up::
 ;down::
@@ -36,43 +38,23 @@ end::
 ;Remap esc to capslock for good
 
 
-AppsKey::
-  KeyboardLED(1,"on",0)
-  KeyboardLED(1,"on",1)
-  KeyboardLED(1,"on",2)
-  KeyboardLED(1,"on",3)
-  KeyboardLED(1,"on",4)
-  KeyboardLED(1,"on",5)
-  KeyboardLED(1,"on",6)
+*AppsKey::
+  Kled(1,"on")
+  
 	KeyWait, AppsKey
-  KeyboardLED(4,"off",0)
-  KeyboardLED(4,"off",1)
-  KeyboardLED(4,"off",2)
-  KeyboardLED(4,"off",3)
-  KeyboardLED(4,"off",4)
-  KeyboardLED(4,"off",5)
-  KeyboardLED(4,"off",6)
+  Kled(4,"off")
+  
 	If (A_PriorKey="AppsKey")
 		Send, {AppsKey}
     ;SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
 return 
 
-CapsLock::
-  KeyboardLED(4,"on",0)
-  KeyboardLED(4,"on",1)
-  KeyboardLED(4,"on",2)
-  KeyboardLED(4,"on",3)
-  KeyboardLED(4,"on",4)
-  KeyboardLED(4,"on",5)
-  KeyboardLED(4,"on",6)
+*CapsLock::
+  Kled(4,"on")
+SetCapsLockState , AlwaysOff
+
 	KeyWait, CapsLock
-  KeyboardLED(4,"off",0)
-  KeyboardLED(4,"off",1)
-  KeyboardLED(4,"off",2)
-  KeyboardLED(4,"off",3)
-  KeyboardLED(4,"off",4)
-  KeyboardLED(4,"off",5)
-  KeyboardLED(4,"off",6)
+  Kled(4,"off")
   
 	If (A_PriorKey="CapsLock")
 		Send, {ESC}
