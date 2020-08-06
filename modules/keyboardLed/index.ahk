@@ -12,11 +12,11 @@
 
 Kled(lv,cmd)
 {
-  Loop, 20 
+  Loop, 100 
   {
    KeyboardLED(lv,cmd, A_Index)
    ;msgbox, %A_Index%
-   
+ 
   }
 return
 }

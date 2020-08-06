@@ -15,8 +15,9 @@ Menu, Tray, Add
 
 RegWrite, REG_DWORD, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Policies\System, DisableLockWorkstation, 1
 
-;#include %A_ScriptDir%\modules\OutlineAroundActiveWindow\index\index.ahk
+;#include %A_ScriptDir%\modules\OutlineAroundActiveWindow\index.ahk ; Broken ATM nood changes
 #include %A_ScriptDir%\modules\changeSoundCard\index.ahk
+#include %A_ScriptDir%\modules\alwaysOnTop\index.ahk
 #include %A_ScriptDir%\modules\quickDir\index.ahk
 #include %A_ScriptDir%\modules\newTextFile\index.ahk
 #include %A_ScriptDir%\modules\altTabHook\index.ahk

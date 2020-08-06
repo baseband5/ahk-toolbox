@@ -17,7 +17,7 @@ return
 #F5::WinShortcut("C:\Users\Kamil\Downloads", "Pobrane") 
 #F6::WinShortcut("C:\Users\Kamil\Documents", "Dokumenty")    
 #F7::WinShortcut("C:\Users\Kamil\Documents\scripts", "scripts")    
-#F8::WinShortcut("C:\Users\Kamil\Downloads", "Pobrane")    
+#F8::WinShortcut("C:\Users\Kamil\Documents\instalki", "instalki")    
 
 
 #If WinActive("ahk_class ExploreWClass") || WinActive("ahk_class CabinetWClass")

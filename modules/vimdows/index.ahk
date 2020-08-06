@@ -8,32 +8,34 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode RegEx
 
 
+laptop:=0
 
 ;tkl to 60%
-;up::
-;down::
-;left::
-;right::
-f1::
-f2::
-f3::
-f4::
-f5::
-f6::
-f7::
-f8::
-f9::
-f10::
-f11::
-f12::
-esc::
-delete::
-pgup::
-pgdn::
-insert::
-home::
-end::
-
+#if, (laptop != 1)
+*up::
+*down::
+*left::
+*right::
+*f1::
+*f2::
+*f3::
+*f4::
+*f5::
+*f6::
+*f7::
+*f8::
+*f9::
+*f10::
+*f11::
+*f12::
+*esc::
+*delete::
+*pgup::
+*pgdn::
+*insert::
+*home::
+*end::
+#IF
 
 ;Remap esc to capslock for good
 
@@ -42,7 +44,7 @@ end::
   Kled(1,"on")
   
 	KeyWait, AppsKey
-  Kled(4,"off")
+  Kled(1,"off")
   
 	If (A_PriorKey="AppsKey")
 		Send, {AppsKey}
@@ -81,6 +83,7 @@ Return
 =::
 
 q::
++q::laptop:=!laptop
 w::send, ^{right}
 +w::send, ^+{right}
 e::
@@ -88,7 +91,7 @@ r::
 t::
 y::send, ^c
 u::send, ^z
-^u::send, {pgup}
++u::send, {pgup}
 i::
 o::
 p::send, ^v
@@ -101,7 +104,7 @@ p::send, ^v
 a::
 s::
 d::send, ^x
-^d::send, {pgdn}
++d::send, {pgdn}
 f::
 
 g::send, {home}
@@ -112,7 +115,7 @@ j::Down
 k::Up
 l::Right ;u::Send {Home}
 '::
-SC027:: ;semicolon
+;SC027:: ;semicolon
 
 
 z::
@@ -127,7 +130,7 @@ m::
 .::
 /::^f
 
-
+Space::send !{Home} ;keypirinha use
 
 
 
@@ -172,7 +175,9 @@ j::
 k::
 l::
 '::
-SC027:: ;semicolon
+
+
+;SC027:: ;semicolon
 
 
 z::
