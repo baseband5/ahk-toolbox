@@ -35,6 +35,7 @@ laptop:=0
 *insert::
 *home::
 *end::
+return
 #IF
 
 ;Remap esc to capslock for good
@@ -74,26 +75,31 @@ Return
 2::
 3::
 4::
+return
 +4::send, {end}
 5::
 6::
 7::
+return
 0::send, {home}
 -::
 =::
 
 q::
+return
 +q::laptop:=!laptop
 w::send, ^{right}
 +w::send, ^+{right}
 e::
 r::
 t::
+return
 y::send, ^c
 u::send, ^z
 +u::send, {pgup}
 i::
 o::
+return
 p::send, ^v
 [::send, ^+{tab}
 ]::send, ^{tab}
@@ -103,31 +109,36 @@ p::send, ^v
 
 a::
 s::
+return
 d::send, ^x
 +d::send, {pgdn}
 f::
-
-g::send, {home}
-+g::send, {end}
+return
+g::send, {pgup 99}
++g::send, {pgdn 99}
 
 h::Left
 j::Down
 k::Up
-l::Right ;u::Send {Home}
+l::Right ;
 '::
-;SC027:: ;semicolon
+SC027:: ;semicolon
+enter::
 
 
 z::
+return
 x::send, {del}
 c::
 v::
+return
 b::send, ^{left}
 +b::send,^+{left}
-n::
+n:: 
 m::
 ,::
 .::
+return
 /::^f
 
 Space::send !{Home} ;keypirinha use
@@ -138,7 +149,7 @@ Space::send !{Home} ;keypirinha use
 1::f1
 2::f2
 3::f3
-4::f4
+4::jf4
 5::f5
 6::f6
 7::f7
@@ -148,10 +159,10 @@ Space::send !{Home} ;keypirinha use
 -::f11
 =::f12  
 
-q::KeyboardLED(4,"on",3)
-w::KeyboardLED(4,"off",3)
+q::Send  {Volume_Mute}
+w::Send   {Volume_Up}
 
-e::
+e::Send   {Volume_Down}
 r:: Reload
 t::
 y::
@@ -161,12 +172,12 @@ o::
 p::
 [::
 ]::
+return
 
-
-a::KeyboardLED(4,"on",4)
-s::KeyboardLED(1,"on",4)
-d::
-f::
+a::Send        {Media_Prev}
+s::Send       {Media_Play_Pause}
+d::Send       {Media_Stop}
+f::Send       {Media_Next}
 
 g::
 
@@ -177,11 +188,12 @@ l::
 '::
 
 
-;SC027:: ;semicolon
-
+SC027:: ;semicolon
+enter::
 
 z::
 x::
+return
 c::toggleAudio()
 v::
 b::
@@ -191,7 +203,7 @@ m::
 ,::
 .::
 /::
-
+return
 
 
 ;Free context
