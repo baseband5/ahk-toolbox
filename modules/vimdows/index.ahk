@@ -149,7 +149,7 @@ Space::send !{Home} ;keypirinha use
 1::f1
 2::f2
 3::f3
-4::jf4
+4::f4
 5::f5
 6::f6
 7::f7
